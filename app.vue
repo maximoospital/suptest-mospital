@@ -58,11 +58,6 @@
               }
               return sumNumber;
           }
-      },
-      mounted() {
-          console.log("Test");
       }
   }
 </script>
-<style>
-</style>
