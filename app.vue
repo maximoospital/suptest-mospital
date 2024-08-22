@@ -6,6 +6,7 @@
       <input type="name" placeholder="ID" v-model="id" />
       <button @click="verify()">Validar</button>
       <p v-if="verified">{{ this.valid }}</p>
+      <P v-if="verified">Nombre: {{ this.nombre }} Apellido: {{ this.apellido }} ID: {{ this.new_id }}</P>
   </div>
 </template>
 <script>
@@ -16,7 +17,8 @@
               apellido: '',
               id: '',
               valid: false,
-              verified: false
+              verified: false,
+              new_id: ''
           }
       },
       methods: {
@@ -28,6 +30,7 @@
               const id_sourcenumber = numericPart.slice(0, -1); // Remove the last digit
               let new_id = this.apellido.toUpperCase().slice(0, 2) + this.nombre.toUpperCase().slice(0, 2) + id_sourcenumber + '-' + this.createVerificationDigit(id_sourcenumber);
               console.log("New ID: " + new_id);
+              this.new_id = new_id;
               if(new_id === this.id){
                   this.valid = "OK";
               } else {
@@ -47,9 +50,10 @@
                 E += digit;
               }
             }
-
+            console.log("S: " + S + " O: " + O + " E: " + E);
             let X = (O * 2) + (E * 3) + S;
             let verificationDigit = X % 10;
+            console.log("Verification Digit: " + verificationDigit);
 
             return verificationDigit;
           }
