@@ -8,7 +8,7 @@
       <p v-if="verified">{{ this.valid }}</p>
       <p v-if="verified">Nombre: {{ this.nombre }}</p>
       <p v-if="verified">Apellido: {{ this.apellido }}</p>
-      <p v-if="verified">ID: {{ this.id }}</p>
+      <p v-if="verified">ID: {{ this.new_id }}</p>
   </div>
 </template>
 <script>
@@ -59,9 +59,9 @@
             console.log("Sum all the numbers in an even position: " + E);
             console.log("Multiply the sum of the numbers in an odd position by 2: " + O * 2);
             console.log("Multiply the sum of the numbers in an even position by 3: " + E * 3);
-            console.log("Sum all the by products: " + (O * 2) + (E * 3) + S + " = X");
             let X = (O * 2) + (E * 3) + S;
             let V = X % 10;
+            console.log("Sum all the by products: " + X + " = X");
             console.log("Divide X by 10 and get the remainder: " + V);
             console.log("V is the verification digit: " + V);
 
