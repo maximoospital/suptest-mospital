@@ -44,19 +44,25 @@
           createVerificationDigit(number) {
             let S = 0, O = 0, E = 0;
             let numLength = number.length;
+            let oddPositioned = [];
+            let evenPositioned = [];
             console.log("Take the numeric part of the ID without the verification digit: " + number);
             for (let i = 0; i < numLength; i++) {
               let digit = parseInt(number[i]);
               S += digit;
               if (i % 2 === 0) {
                 O += digit;
+                oddPositioned.push(digit);
               } else {
                 E += digit;
+                evenPositioned.push(digit);
               }
             }
             console.log("Sum all the numbers: " + S);
             console.log("Sum all the numbers in an odd position: " + O);
+            console.log("Numbers in an odd position: " + oddPositioned);
             console.log("Sum all the numbers in an even position: " + E);
+            console.log("Numbers in an even position: " + evenPositioned);
             console.log("Multiply the sum of the numbers in an odd position by 2: " + O * 2);
             console.log("Multiply the sum of the numbers in an even position by 3: " + E * 3);
             let X = (O * 2) + (E * 3) + S;
