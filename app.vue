@@ -1,9 +1,9 @@
 <template>
   <div>
       <h1>ID Validator</h1>
-      <input type="name" placeholder="nombre" v-model="nombre"></input> 
-      <input type="name" placeholder="apellido" v-model="apellido"></input> 
-      <input type="name" placeholder="ID" v-model="id"></input> 
+      <input type="name" placeholder="nombre" v-model="nombre"/>
+      <input type="name" placeholder="apellido" v-model="apellido" />
+      <input type="name" placeholder="ID" v-model="id" />
       <button @click="verify()">Validar</button>
       <p v-if="verified">{{ this.valid }}</p>
   </div>
